@@ -41,7 +41,9 @@
             display: block;
         }
 
-        .service, .product {
+        .card {
+            display: flex;
+            align-items: center;
             background-color: #fff;
             border: 1px solid #f8bbd0;
             border-radius: 10px;
@@ -50,7 +52,18 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .service h2, .product h2 {
+        .card img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+            margin-left: 20px;
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .card h2 {
             color: #e91e63;
         }
 
@@ -123,34 +136,45 @@
     <main>
         <!-- Servicios -->
         <section id="services" class="section active">
-            <div class="service">
-                <h2>1. Manicura clásica</h2>
-                <p>Incluye limpieza, corte, limado, y esmaltado sencillo.</p>
-                <p class="price">💰 Precio: $150</p>
-                <button class="contact-btn" onclick="sendToWhatsApp('Manicura clásica', 150)">Citas aquí</button>
+            <div class="card">
+                <div class="card-content">
+                    <h2>Manicura clásica</h2>
+                    <p>Incluye limpieza, corte, limado, y esmaltado sencillo.</p>
+                    <p class="price">💰 Precio: $150</p>
+                    <button class="contact-btn" onclick="sendToWhatsApp('Manicura clásica', 150)">Citas aquí</button>
+                </div>
+                <img src="ruta-de-tu-imagen-servicio1.jpg" alt="Manicura clásica">
             </div>
-            <div class="service">
-                <h2>2. Manicura Spa</h2>
-                <p>Manicura clásica + exfoliación, hidratación, y masaje relajante.</p>
-                <p class="price">💰 Precio: $250</p>
-                <button class="contact-btn" onclick="sendToWhatsApp('Manicura Spa', 250)">Citas aquí</button>
+            <div class="card">
+                <div class="card-content">
+                    <h2>Manicura Spa</h2>
+                    <p>Manicura clásica + exfoliación, hidratación, y masaje relajante.</p>
+                    <p class="price">💰 Precio: $250</p>
+                    <button class="contact-btn" onclick="sendToWhatsApp('Manicura Spa', 250)">Citas aquí</button>
+                </div>
+                <img src="ruta-de-tu-imagen-servicio2.jpg" alt="Manicura Spa">
             </div>
-            <!-- Agrega más servicios según sea necesario -->
         </section>
 
         <!-- Productos -->
         <section id="products" class="section">
-            <div class="product">
-                <h2>Esmaltes en gel</h2>
-                <p>Esmaltes de alta calidad para un acabado perfecto.</p>
-                <p class="price">💰 Precio: $120</p>
-                <label>Cantidad: <input type="number" id="product1" min="0" onchange="calculateTotal()"></label>
+            <div class="card">
+                <div class="card-content">
+                    <h2>Esmaltes en gel</h2>
+                    <p>Esmaltes de alta calidad para un acabado perfecto.</p>
+                    <p class="price">💰 Precio: $120</p>
+                    <label>Cantidad: <input type="number" id="product1" min="0" onchange="calculateTotal()"></label>
+                </div>
+                <img src="ruta-de-tu-imagen-producto1.jpg" alt="Esmaltes en gel">
             </div>
-            <div class="product">
-                <h2>Kit de uñas acrílicas</h2>
-                <p>Todo lo necesario para uñas acrílicas profesionales.</p>
-                <p class="price">💰 Precio: $350</p>
-                <label>Cantidad: <input type="number" id="product2" min="0" onchange="calculateTotal()"></label>
+            <div class="card">
+                <div class="card-content">
+                    <h2>Kit de uñas acrílicas</h2>
+                    <p>Todo lo necesario para uñas acrílicas profesionales.</p>
+                    <p class="price">💰 Precio: $350</p>
+                    <label>Cantidad: <input type="number" id="product2" min="0" onchange="calculateTotal()"></label>
+                </div>
+                <img src="ruta-de-tu-imagen-producto2.jpg" alt="Kit de uñas acrílicas">
             </div>
             <p id="totalPrice" class="price">Total: $0</p>
             <button class="contact-btn" onclick="buyProduct('productos seleccionados', document.getElementById('product1').value + document.getElementById('product2').value, document.getElementById('totalPrice').innerText.split('$')[1])">Comprar</button>
@@ -161,4 +185,4 @@
         <p>© 2024 C.MATI Uñas & Manicura</p>
     </footer>
 </body>
-              </html>
+</html>
